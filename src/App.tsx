@@ -5,6 +5,7 @@ const Dashboard=lazy(()=> import('./pages/Dashboard'))
 const Products=lazy(()=> import('./pages/Products'))
 const Customer=lazy(()=> import('./pages/Customer'))
 const Transaction=lazy(()=> import('./pages/Transaction'))
+import './styles/app.scss'
 
 
 function App() {
