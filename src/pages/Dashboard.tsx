@@ -3,6 +3,7 @@ import AdminSidebar from '../components/AdminSidebar'
 import { BsSearch } from 'react-icons/bs'
 import { FaRegBell } from 'react-icons/fa'
 import { HiTrendingDown,HiTrendingUp } from 'react-icons/hi'
+import { WiDayThunderstorm } from 'react-icons/wi'
 
 const dashboard = () => {
   return (
@@ -18,10 +19,23 @@ const dashboard = () => {
   </div>
   <section className="widgetContainer">
       <WidgetItem percent={40} amount={true} value={340000} heading="Revenue" color='rgb(0,115,255)' />
-      <WidgetItem percent={10} amount={true} value={340000} heading="Revenue" color='rgb(0,115,255)' />
-      <WidgetItem percent={40} amount={true} value={340000} heading="Revenue" color='rgb(0,115,255)' />
-      <WidgetItem percent={40} amount={true} value={340000} heading="Revenue" color='rgb(0,115,255)' />
+      <WidgetItem percent={-10} value={3400} heading="Inflation" color='red' />
+      <WidgetItem percent={80}  value={40000} heading="Transactions" color='green' />
+      <WidgetItem percent={40} amount={true} value={1000} heading="Products" color='orange' />
 
+  </section>
+  <section className="graphContainer">
+    <div className="revenueChart">
+        <h2>Revenue & Transaction</h2>
+        {/* //graph here */}
+
+    </div>
+    <div className="dashboardCategories">
+          <h2>Inventory</h2>
+          <div>
+            <CategoryItem heading="laptops" value={70} color='red'/>
+          </div>
+          </div>
   </section>
 </main>
 {/* main */}
@@ -48,5 +62,22 @@ const WidgetItem=({heading,value,percent,color,amount}:WidgetItemProps)=><articl
     <span style={{color,}}>{percent}%</span>
   </div>
 </article>
+interface CategoryItemProps{
+  color:string,
+  value:number,
+  heading:string,
+}
+const CategoryItem=({color,value,heading}:CategoryItemProps)=>(
+  <div className='categoryItem'>
 
+    <h5>
+      {heading}
+    </h5>
+    <div>
+    <div style={{backgroundColor:color,width:`${value}%`}}></div>
+
+    </div>
+    <span>{value}</span>
+  </div>
+)
 export default dashboard
