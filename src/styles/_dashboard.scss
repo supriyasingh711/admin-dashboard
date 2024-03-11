@@ -14,4 +14,48 @@
             opacity: 0.7;
         }
     }
+    .widgetContainer{
+        @include flex(row,space-between,stretch,2rem);
+        padding: 2rem 2rem 2rem 0;
+        .widget{
+            min-width: 16rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.132);
+            padding: 2rem;
+            @include flex(row,space-between,stretch,0);
+            .widgetInfo{
+                >p{
+                    opacity: 0.7;
+                    font-size: 0.8rem;
+                }
+                >h4{
+                    font-size: 1.5rem;
+                }
+                >span{
+                    @include flex(row,unset,center,0.2rem);
+                }
+            }
+            .widgetCircle{
+                position:relative;
+                @include square(5rem);
+                border-radius: 50%;
+                flex: none;
+                display: grid;
+                place-items: center;
+                background-color: aquamarine;
+                &::before{
+                    content: '';
+                    position:absolute;
+                    @include square(4rem);
+                    background-color: white;
+                    border-radius: 100%;
+
+                }
+                span{
+                    position: relative;
+
+                }
+            }
+        }
+    }
 }
