@@ -4,7 +4,7 @@ import { BsSearch } from 'react-icons/bs'
 import { FaRegBell } from 'react-icons/fa'
 import { HiTrendingDown,HiTrendingUp } from 'react-icons/hi'
 import { WiDayThunderstorm } from 'react-icons/wi'
-
+import data from '../assets/data.json'
 const dashboard = () => {
   return (
     <div className='adminContainer'>
@@ -33,7 +33,18 @@ const dashboard = () => {
     <div className="dashboardCategories">
           <h2>Inventory</h2>
           <div>
-            <CategoryItem heading="laptops" value={70} color='red'/>
+            {
+              data.categories.map(i=>
+                
+                (
+                  <CategoryItem 
+                  key={i.heading}
+                  heading={i.heading} 
+                  value={i.value} 
+                  color={`hsl(${i.value*4},${i.value}%,50%)`}/>
+
+                ))
+            }
           </div>
           </div>
   </section>
@@ -77,7 +88,7 @@ const CategoryItem=({color,value,heading}:CategoryItemProps)=>(
     <div style={{backgroundColor:color,width:`${value}%`}}></div>
 
     </div>
-    <span>{value}</span>
+    <span>{value}%</span>
   </div>
 )
 export default dashboard

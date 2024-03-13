@@ -104,9 +104,13 @@
                         height: 0.5rem;
                         flex: none;
                         div{
-border-radius: 20px;
-height: 100%;
+                            border-radius: 20px;
+                            height: 100%;
                         }
+                    }
+                    span{
+                        font-size: 0.8rem;
+                        font-weight: 800;
                     }
                 }
             }
