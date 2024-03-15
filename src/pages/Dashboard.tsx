@@ -5,6 +5,8 @@ import { FaRegBell } from 'react-icons/fa'
 import { HiTrendingDown,HiTrendingUp } from 'react-icons/hi'
 import { WiDayThunderstorm } from 'react-icons/wi'
 import data from '../assets/data.json'
+import { BarChart, DoughnutChart } from '../components/Charts'
+import { BiMaleFemale } from 'react-icons/bi'
 const dashboard = () => {
   return (
     <div className='adminContainer'>
@@ -28,6 +30,14 @@ const dashboard = () => {
     <div className="revenueChart">
         <h2>Revenue & Transaction</h2>
         {/* //graph here */}
+        <BarChart 
+        data_1={[300,144,433,655,237,755,190]}
+        data_2={[200,444,254,556,778,755,190]}
+        title_1='Revenue'
+        title_2='Transactions'
+        bgColor_1='rgb(0,115,255)'
+        bgColor_2='rgba(53,162,235,0.8)'
+        />
 
     </div>
     <div className="dashboardCategories">
@@ -47,6 +57,16 @@ const dashboard = () => {
             }
           </div>
           </div>
+  </section>
+  <section className="transactionContainer">
+    <div className="genderChart">
+      <h2>Gender Ratio</h2>
+      {/* chart */}
+      <DoughnutChart labels={["Female","Male"]} data={[12,19]} backgroundColor={["hsl(340,82%,56%)","hsl"]}/>
+      <p><BiMaleFemale/></p>
+    </div>
+    {/* table */}
+
   </section>
 </main>
 {/* main */}
