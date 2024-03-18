@@ -38,7 +38,6 @@ const dashboard = () => {
         bgColor_1='rgb(0,115,255)'
         bgColor_2='rgba(53,162,235,0.8)'
         />
-
     </div>
     <div className="dashboardCategories">
           <h2>Inventory</h2>
