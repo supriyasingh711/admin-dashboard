@@ -13,11 +13,10 @@ function App() {
     <Suspense fallback={<Loader/>}>
 <Router>
     <Routes>
-      <Route path='/admin-dashboard/' element={<Dashboard/>}/>
+      <Route path='/' element={<Dashboard/>}/>
       <Route path='/admin/products' element={<Products/>}/>
       <Route path='/admin/customer' element={<Customer/>}/>
       <Route path='/admin/transaction' element={<Transaction/>}/>
-
     </Routes>
    </Router>
     </Suspense>
