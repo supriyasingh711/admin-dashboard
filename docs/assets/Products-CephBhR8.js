@@ -1,1 +1,0 @@
-import{j as s}from"./index-BW_GAVSo.js";import{A as r}from"./AdminSidebar-D1uyJn_-.js";const n=()=>s.jsxs("div",{className:"adminContainer",children:[s.jsx(r,{}),s.jsx("main",{children:"so main"})]});export{n as default};
